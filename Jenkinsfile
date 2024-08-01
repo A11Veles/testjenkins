@@ -4,20 +4,19 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    docker.build('my-docker-image')
-                    sh 'git --version'
+                    sh 'docker build test1 .'
 
                 }
             }
         }
-        stage('Test') {
-            steps {
-                script {
-                    docker.image('my-docker-image').inside {
-                        sh 'echo "Running tests..."'
-                    }
-                }
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         script {
+        //             docker.image('my-docker-image').inside {
+        //                 sh 'echo "Running tests..."'
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
