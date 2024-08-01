@@ -4,7 +4,9 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    docker.build('my-docker-image')
+                    //docker.build('my-docker-image')
+                    sh 'git --version'
+
                 }
             }
         }
